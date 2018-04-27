@@ -2,6 +2,7 @@ MYDIR=${0%/*}
 cd $MYDIR
 cmake ./
 make 
+mkdir sourse
 cp *.cc ./sourse
 cp *.h ./sourse
 rm -rf CMakeFiles
