@@ -7,9 +7,15 @@ message AuthMessage {
     optional string pass = 2;
 }
 
+message RegisterMessage {
+    optional string login = 1;
+    optional string pass = 2;
+}
+
 message RequestContext {
     optional message_type message_type_ = 1;
     optional AuthMessage  auth_message_ = 3;
+    optional RegisterMessage register_message_ = 4;
 }
 
 message ResponseContext {
