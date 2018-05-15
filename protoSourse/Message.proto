@@ -1,7 +1,18 @@
-package sample.proto;
+package network;
 
-message Message {
-	required string id = 1;
+import  "MessageType.proto";
 
-	optional bytes data = 2;
+message AuthMessage {
+    optional string login = 1;
+    optional string pass = 2;
+}
+
+message RequestContext {
+    optional message_type message_type_ = 1;
+    optional AuthMessage  auth_message_ = 3;
+}
+
+message ResponseContext {
+    optional int32 error_code = 1;
+    optional message_type message_type_ = 2;
 }

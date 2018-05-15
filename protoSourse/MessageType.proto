@@ -1,0 +1,6 @@
+package network;
+
+enum message_type{
+    MO_REGISTER = 0;
+    MO_AUTH = 1;
+}
