@@ -18,7 +18,15 @@ message RequestContext {
     optional RegisterMessage register_message_ = 4;
 }
 
+message RegisterMessageResponse
+{
+    optional string messageText = 1;
+    optional bool status = 2;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
+
+    optional RegisterMessageResponse register_response = 3;
 }
