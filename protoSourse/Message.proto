@@ -24,9 +24,25 @@ message RegisterMessageResponse
     optional bool status = 2;
 }
 
+message SessionInfo
+{
+    optional string login = 1;
+    optional int64 userId = 2;
+    optional int32 role = 3;
+    optional string session_id = 4;
+}
+
+message AuthMessageResponse
+{
+    optional bool status = 2;
+    optional string server_message = 3;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
 
     optional RegisterMessageResponse register_response = 3;
+    optional SessionInfo session_info = 4;
+    optional AuthMessageResponse auth_response = 5;
 }
