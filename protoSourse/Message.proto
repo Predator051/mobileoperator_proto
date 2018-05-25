@@ -22,7 +22,7 @@ message RequestContext {
     optional AuthMessage  auth_message_ = 3;
     optional RegisterMessage register_message_ = 4;
     optional string login = 5;
-    optional LogOutMessage logout_message_ = 6;
+    optional SessionInfo session_info = 6;
 }
 
 message RegisterMessageResponse
