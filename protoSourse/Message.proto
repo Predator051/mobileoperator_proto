@@ -46,6 +46,16 @@ message AuthMessageResponse
     optional string server_message = 3;
 }
 
+message UserPackageInfoResponse
+{
+    optional string phone = 1;
+    optional float score = 2;
+    optional int32 count_sec_into_net = 4;
+    optional int32 count_sec_out_net = 5;
+    optional int32 count_sms = 6;
+    optional int32 count_mb = 7;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
@@ -53,4 +63,5 @@ message ResponseContext {
     optional RegisterMessageResponse register_response = 3;
     optional SessionInfo session_info = 4;
     optional AuthMessageResponse auth_response = 5;
+    optional UserPackageInfoResponse package_response =  6;
 }

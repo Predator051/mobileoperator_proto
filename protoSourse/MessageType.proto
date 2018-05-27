@@ -5,4 +5,5 @@ enum message_type{
     MO_AUTH = 1;
     MO_LOGOUT= 2;
     MO_USER_STATUS = 3;
+    MO_USER_PACKAGE_INFO = 4;
 }
