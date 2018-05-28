@@ -46,6 +46,26 @@ message AuthMessageResponse
     optional string server_message = 3;
 }
 
+message RateInfo
+{
+    optional int32 count_sec_into_net = 4;
+    optional int32 count_sec_out_net = 5;
+    optional int32 count_sms = 6;
+    optional int32 count_mb = 7;
+    optional int32 price_into_net = 8;
+    optional int32 price_out_net = 9;
+    optional int32 price_sms = 10;
+    optional int32 period = 11;
+    optional string about = 12;
+    optional int32 id = 13;
+}
+
+message UserRateInfo
+{
+    optional RateInfo rate_info = 1;
+    optional int64 connect_date = 2;
+}
+
 message UserPackageInfoResponse
 {
     optional string phone = 1;
@@ -54,6 +74,7 @@ message UserPackageInfoResponse
     optional int32 count_sec_out_net = 5;
     optional int32 count_sms = 6;
     optional int32 count_mb = 7;
+    optional UserRateInfo user_rate = 8;
 }
 
 message ResponseContext {
