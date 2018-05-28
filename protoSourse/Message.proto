@@ -61,10 +61,34 @@ message RateInfo
     optional float cost = 14;
 }
 
+message ServiceInfo
+{
+    optional int64 id = 1;
+    optional string name = 2;
+    optional int64 count_sec_into_net = 3;
+    optional int64 count_sec_out_net = 4;
+    optional int64 count_sms = 5;
+    optional int64 count_mb = 6;
+    optional int64 live_time = 7;
+    optional int64 cost = 8;
+    optional string about = 9;
+}
+
 message UserRateInfo
 {
     optional RateInfo rate_info = 1;
     optional int64 connect_date = 2;
+}
+
+message UserServiceInfo
+{
+    message UserService
+    {
+        optional ServiceInfo service = 1;
+        optional string connected_date = 2;
+    }
+
+    repeated UserService user_services = 3;
 }
 
 message UserPackageInfoResponse
@@ -76,6 +100,7 @@ message UserPackageInfoResponse
     optional int32 count_sms = 6;
     optional int32 count_mb = 7;
     optional UserRateInfo user_rate = 8;
+    optional UserServiceInfo user_service_info = 9;
 }
 
 message ResponseContext {
@@ -86,4 +111,5 @@ message ResponseContext {
     optional SessionInfo session_info = 4;
     optional AuthMessageResponse auth_response = 5;
     optional UserPackageInfoResponse package_response =  6;
+
 }
