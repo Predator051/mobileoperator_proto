@@ -58,6 +58,7 @@ message RateInfo
     optional int32 period = 11;
     optional string about = 12;
     optional int32 id = 13;
+    optional float cost = 14;
 }
 
 message UserRateInfo
