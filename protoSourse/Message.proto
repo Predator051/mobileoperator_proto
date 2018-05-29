@@ -85,7 +85,7 @@ message UserServiceInfo
     message UserService
     {
         optional ServiceInfo service = 1;
-        optional string connected_date = 2;
+        optional int64 connected_date = 2;
     }
 
     repeated UserService user_services = 3;
