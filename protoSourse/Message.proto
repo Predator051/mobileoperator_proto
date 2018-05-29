@@ -91,6 +91,44 @@ message UserServiceInfo
     repeated UserService user_services = 3;
 }
 
+message UserConnectedRate
+{
+    optional int64 user_id = 1;
+    optional RateInfo rate = 2;
+    optional int64 date = 3;
+}
+
+message UserConnectedService
+{
+    optional int64 user_id = 1;
+    optional ServiceInfo service = 2;
+    optional int64 date = 3;
+}
+
+message SmsPayment
+{
+    optional int64 user_id = 1;
+    optional float paid = 2;
+    optional int64 date = 3;
+}
+
+message OutboundCallPayment
+{
+    optional int64 user_id = 1;
+    optional float paid = 2;
+    optional int64 date = 3;
+    optional int32 count_sec = 4;
+    optional string number_to = 5;
+}
+
+message UserPaidStoryResponse
+{
+    repeated UserConnectedRate rates = 1;
+    repeated UserConnectedService services = 2;
+    repeated SmsPayment sms = 3;
+    repeated OutboundCallPayment calls = 4;
+}
+
 message UserPackageInfoResponse
 {
     optional string phone = 1;
@@ -110,6 +148,6 @@ message ResponseContext {
     optional RegisterMessageResponse register_response = 3;
     optional SessionInfo session_info = 4;
     optional AuthMessageResponse auth_response = 5;
-    optional UserPackageInfoResponse package_response =  6;
-
+    optional UserPackageInfoResponse package_response = 6;
+    optional UserPaidStoryResponse story_response = 7;
 }
