@@ -141,6 +141,16 @@ message UserPackageInfoResponse
     optional UserServiceInfo user_service_info = 9;
 }
 
+message AllRatesResponse
+{
+    repeated RateInfo allRates = 1;
+}
+
+message AllServicesResponse
+{
+    repeated ServiceInfo allServices = 1;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
@@ -150,4 +160,6 @@ message ResponseContext {
     optional AuthMessageResponse auth_response = 5;
     optional UserPackageInfoResponse package_response = 6;
     optional UserPaidStoryResponse story_response = 7;
+    optional AllRatesResponse all_rates = 8;
+    optional AllServicesResponse all_services = 9;
 }

@@ -7,4 +7,6 @@ enum message_type{
     MO_USER_STATUS = 3;
     MO_USER_PACKAGE_INFO = 4;
     MO_USER_STORY = 5;
+    MO_ALL_RATES = 6;
+    MO_ALL_SERVICES = 7;
 }
