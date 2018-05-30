@@ -9,4 +9,6 @@ enum message_type{
     MO_USER_STORY = 5;
     MO_ALL_RATES = 6;
     MO_ALL_SERVICES = 7;
+    MO_RATE_PAYMENT = 8;
+    MO_SERVICE_PAYMENT = 9;
 }
