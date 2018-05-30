@@ -185,6 +185,7 @@ message ResponseContext {
     optional AllRatesResponse all_rates = 8;
     optional AllServicesResponse all_services = 9;
     optional RatePaymentResponse ratePaymentResponse = 10;
+    optional ServicePaymentResponse servicePaymentResponse = 11;
 }
 
 
