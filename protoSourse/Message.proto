@@ -17,6 +17,16 @@ message LogOutMessage
     optional string login = 1;
 }
 
+message RatePaymentMessage
+{
+    optional int64 rate_id = 1;
+}
+
+message ServicePaymentMessage
+{
+    optional int64 rate_id = 1;
+}
+
 message RequestContext {
     optional message_type message_type_ = 1;
     optional AuthMessage  auth_message_ = 3;
@@ -24,6 +34,8 @@ message RequestContext {
     optional string login = 5;
     optional SessionInfo session_info = 6;
     optional LogOutMessage logout_message = 7;
+    optional RatePaymentMessage rate_payment = 8;
+    optional ServicePaymentMessage service_payment = 9;
 }
 
 message RegisterMessageResponse
@@ -151,6 +163,16 @@ message AllServicesResponse
     repeated ServiceInfo allServices = 1;
 }
 
+message RatePaymentResponse
+{
+    optional string message_res = 1;
+}
+
+message ServicePaymentResponse
+{
+    optional string message_res = 1;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
@@ -162,4 +184,7 @@ message ResponseContext {
     optional UserPaidStoryResponse story_response = 7;
     optional AllRatesResponse all_rates = 8;
     optional AllServicesResponse all_services = 9;
+    optional RatePaymentResponse ratePaymentResponse = 10;
 }
+
+
