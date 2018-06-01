@@ -11,4 +11,5 @@ enum message_type{
     MO_ALL_SERVICES = 7;
     MO_RATE_PAYMENT = 8;
     MO_SERVICE_PAYMENT = 9;
+    MO_ALL_USERS = 10;
 }

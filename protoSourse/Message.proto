@@ -173,6 +173,17 @@ message ServicePaymentResponse
     optional string message_res = 1;
 }
 
+message AllUsersResponse
+{
+    message PhoneId
+    {
+        optional string phone = 1;
+        optional int64 user_id = 2;
+    }
+
+    repeated PhoneId phone_id = 1;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
@@ -186,6 +197,7 @@ message ResponseContext {
     optional AllServicesResponse all_services = 9;
     optional RatePaymentResponse ratePaymentResponse = 10;
     optional ServicePaymentResponse servicePaymentResponse = 11;
+    optional AllUsersResponse all_users_response = 12;
 }
 
 
