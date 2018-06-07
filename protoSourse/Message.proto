@@ -27,6 +27,11 @@ message ServicePaymentMessage
     optional int64 rate_id = 1;
 }
 
+message UserPackageInfoMessage
+{
+    optional int64 user_id = 1;
+}
+
 message RequestContext {
     optional message_type message_type_ = 1;
     optional AuthMessage  auth_message_ = 3;
@@ -36,6 +41,7 @@ message RequestContext {
     optional LogOutMessage logout_message = 7;
     optional RatePaymentMessage rate_payment = 8;
     optional ServicePaymentMessage service_payment = 9;
+    optional UserPackageInfoMessage package_info = 10;
 }
 
 message RegisterMessageResponse
