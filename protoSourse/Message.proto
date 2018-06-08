@@ -37,6 +37,28 @@ message UserStoryMessage
     optional int64 user_id = 1;
 }
 
+message AdminUserRateChange
+{
+    optional int64 user_id = 1;
+    optional int64 rate_id = 2;
+}
+
+message AdminUserServiceChange
+{
+    optional int64 user_id = 1;
+    optional int64 service_id = 2;
+}
+
+message AdminUpdateUserPackage
+{
+    optional float score = 2;
+    optional int32 count_sec_into_net = 4;
+    optional int32 count_sec_out_net = 5;
+    optional int32 count_sms = 6;
+    optional int32 count_mb = 7;
+    optional int64 user_id = 1;
+}
+
 message RequestContext {
     optional message_type message_type_ = 1;
     optional AuthMessage  auth_message_ = 3;
@@ -48,6 +70,7 @@ message RequestContext {
     optional ServicePaymentMessage service_payment = 9;
     optional UserPackageInfoMessage package_info = 10;
     optional UserStoryMessage user_story = 11;
+    optional AdminUpdateUserPackage admin_user_package = 12;
 }
 
 message RegisterMessageResponse
@@ -196,6 +219,21 @@ message AllUsersResponse
     repeated PhoneId phone_id = 1;
 }
 
+message AdminUserRateChangeResponse
+{
+    optional string status_message = 1;
+}
+
+message AdminUserServiceChangeResponse
+{
+    optional string status_message = 1;
+}
+
+message AdminUpdateUserPackageResponse
+{
+    optional string status_message = 1;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
@@ -210,6 +248,9 @@ message ResponseContext {
     optional RatePaymentResponse ratePaymentResponse = 10;
     optional ServicePaymentResponse servicePaymentResponse = 11;
     optional AllUsersResponse all_users_response = 12;
+    optional AdminUserRateChangeResponse admin_user_rate_change = 13;
+    optional AdminUserServiceChangeResponse admin_user_service = 14;
+    optional AdminUpdateUserPackageResponse admin_update_user_package = 15;
 }
 
 
