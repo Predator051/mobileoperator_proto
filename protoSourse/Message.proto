@@ -71,6 +71,8 @@ message RequestContext {
     optional UserPackageInfoMessage package_info = 10;
     optional UserStoryMessage user_story = 11;
     optional AdminUpdateUserPackage admin_user_package = 12;
+    optional AdminUserServiceChange admin_user_service_change = 13;
+    optional AdminUserRateChange admin_user_rate_change = 14;
 }
 
 message RegisterMessageResponse
@@ -234,6 +236,17 @@ message AdminUpdateUserPackageResponse
     optional string status_message = 1;
 }
 
+message RateStatisticsResponse
+{
+    message MonthCount
+    {
+        optional int32 month = 1;
+        optional int64 count_rate = 2;
+    }
+
+    optional MonthCount rate_month = 1;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
@@ -251,6 +264,7 @@ message ResponseContext {
     optional AdminUserRateChangeResponse admin_user_rate_change = 13;
     optional AdminUserServiceChangeResponse admin_user_service = 14;
     optional AdminUpdateUserPackageResponse admin_update_user_package = 15;
+    optional RateStatisticsResponse rate_statistics = 16;
 }
 
 
