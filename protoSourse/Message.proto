@@ -245,7 +245,7 @@ message RateStatisticsResponse
         optional RateInfo rate_info = 3;
     }
 
-    optional MonthCount rate_month = 1;
+    repeated MonthCount rate_month = 1;
 }
 
 message ResponseContext {
