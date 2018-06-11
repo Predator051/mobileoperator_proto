@@ -242,6 +242,7 @@ message RateStatisticsResponse
     {
         optional int32 month = 1;
         optional int64 count_rate = 2;
+        optional RateInfo rate_info = 3;
     }
 
     optional MonthCount rate_month = 1;
