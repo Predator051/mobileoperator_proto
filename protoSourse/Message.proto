@@ -71,6 +71,8 @@ message RequestContext {
     optional UserPackageInfoMessage package_info = 10;
     optional UserStoryMessage user_story = 11;
     optional AdminUpdateUserPackage admin_user_package = 12;
+    optional AdminUserServiceChange admin_user_service_change = 13;
+    optional AdminUserRateChange admin_user_rate_change = 14;
 }
 
 message RegisterMessageResponse
