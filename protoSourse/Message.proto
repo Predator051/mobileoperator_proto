@@ -248,6 +248,18 @@ message RateStatisticsResponse
     repeated MonthCount rate_month = 1;
 }
 
+message ServiceStatisticsResponse
+{
+    message MonthCount
+    {
+        optional int32 month = 1;
+        optional int64 count_service = 2;
+        optional ServiceInfo service_info = 3;
+    }
+
+    repeated MonthCount service_month = 1;
+}
+
 message ResponseContext {
     optional int32 error_code = 1;
     optional message_type message_type_ = 2;
@@ -266,6 +278,7 @@ message ResponseContext {
     optional AdminUserServiceChangeResponse admin_user_service = 14;
     optional AdminUpdateUserPackageResponse admin_update_user_package = 15;
     optional RateStatisticsResponse rate_statistics = 16;
+    optional ServiceStatisticsResponse service_statistics = 17;
 }
 
 
